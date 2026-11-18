@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+:root {
+  --bg-canvas: #f3efe6;
+  --bg-surface: #faf7f0;
+  --bg-earth-soft: #eae3d2;
+  --forest-deep: #1e3522;
+  --forest-mid: #2f5e39;
+  --forest-light: #497a52;
+  --earth-bark: #5c402c;
+  --earth-clay: #8a5a3b;
+  --earth-ochre: #b57428;
+  --border-earth: #d6cbb8;
+}
+
+@layer base {
+  body {
+    background-color: var(--bg-canvas);
+    color: var(--forest-deep);
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Fraunces', Georgia, serif;
+  }
+
+  .font-mono-nums {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@keyframes floatUpFade {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 6px) scale(0.94);
+  }
+  20% {
+    opacity: 1;
+    transform: translate(-50%, -4px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -30px) scale(0.98);
+  }
+}
+
+@keyframes gentleBob {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes rainFall {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0.35;
+  }
+  100% {
+    transform: translateY(18px);
+    opacity: 0.1;
+  }
+}
+
+.animate-float-up {
+  animation: floatUpFade 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-gentle-bob {
+  animation: gentleBob 3.6s ease-in-out infinite;
+}
+
+.animate-rain-fall {
+  animation: rainFall 0.9s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-gentle-bob,
+  .animate-rain-fall,
+  .animate-float-up {
+    animation: none !important;
+  }
+}

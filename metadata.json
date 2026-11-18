@@ -1,0 +1,6 @@
+{
+  "name": "Ganado Care",
+  "description": "Simulador de granja y cuidado de ganado en tonos verde y tierra. Gestiona pasturas, agua, nutrición, ordeño y bienestar animal.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
